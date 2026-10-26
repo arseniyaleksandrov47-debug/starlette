@@ -712,6 +712,7 @@ def test_request_url_starlette_context(test_client_factory: TestClientFactory) -
     client.get("/home")
     assert url_for == URL("http://testserver/home")
 
+
 def test_request_path_outside_starlette_context(test_client_factory: TestClientFactory) -> None:
     async def app(scope: Scope, receive: Receive, send: Send) -> None:
         request = Request(scope, receive)
@@ -779,4 +780,3 @@ def test_request_path_starlette_context_with_root_path(test_client_factory: Test
     client = test_client_factory(app, root_path="/subapp")
     client.get("/subapp/home")
     assert path_for == "/subapp/home"
-
