@@ -562,6 +562,7 @@ def test_lifespan_app_subclass() -> None:
 
     App(lifespan=lifespan)
 
+
 def test_lifespan_sub_app_propagation(test_client_factory: TestClientFactory) -> None:
     from starlette.routing import Mount
 
@@ -630,4 +631,3 @@ def test_lifespan_sub_app_default_no_propagation(test_client_factory: TestClient
         "running",
         "main_shutdown",
     ]
-
